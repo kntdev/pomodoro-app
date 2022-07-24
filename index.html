@@ -7,12 +7,13 @@
     <title>Pomodoro APP</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="nav__logo">
-                <span>Logo</span>
+                <span>PomoTrick</span>
             </div>
             <div class="nav__items">
                 <a href="#">Settings</a>
@@ -24,19 +25,32 @@
     <main>
         <section class="app">
             <div class="app__items">
-                <a href="#">Pomodoro</a>
-                <a href="#">Short Break</a>
-                <a href="#">Long Break</a>
+                <button>Pomodoro</button>
+                <button>Short Break</button>
+                <button>Long Break</button>
             </div>
-            <div class="app__timer">
-                <h2>25:00</h2>
+            <div class="app__timer-btn">
+                <div class="app__timer">
+                    <p id="timer1">Let's start?</p>
+                    <!-- <p id="timer2">5:00</p> -->
+                    <!-- <p id="timer3">15:00</p> -->
+                    
+                    <!-- <p class="app__timer-p">mins</p> -->
+                </div>
+                <button id="btn-app" class="app__btn">START</button>
             </div>
-            <button class="app__btn">START</button>
             <h3 class="app__h3">Time to focus!</h3>
         </section>
         <section class="tasks">
-            <div class="tasks__items"></div>
-            <div class="tasks__app"></div>
+            <div class="tasks__items">
+                <p>Tasks</p>
+                <div class="tasks__items-btn">
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+            </div>
+            <div class="tasks__app">
+                <span><i class="fa-regular fa-square-plus"></i> Add Task</span>
+            </div>
         </section>
     </main>
     <footer></footer>
