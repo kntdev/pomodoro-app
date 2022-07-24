@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;500;700&display=swap');
+
+body{
+    font-family: 'Barlow', sans-serif;   
+}
+
+/* Header Section */
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: crimson;
+}
+.nav__logo{
+    font-size: 2.4rem;
+    color: #fff;
+}
+.nav__items a{
+    padding: 8px;
+    margin-inline: 5px;
+    background-color: #fff;
+    color: crimson;
+    text-decoration: none;
+}
+/* Main section*/
+section{
+    width: 90%;
+    min-width: 320px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+/* App Section*/
+.app{
+    text-align: center;
+}
+.app__items{
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.app__items a{
+    padding: 8px;
+    text-decoration: none;
+    color: #434343;
+}
+.app__btn{
+    border: none;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    color: #fff;
+    background-color: crimson;
+    cursor: pointer;
+}
+.app__h3{
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: crimson;
+}
+.app__timer{
+    font-size: 5rem;
+    line-height: 1rem;
+}
