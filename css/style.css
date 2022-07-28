@@ -68,14 +68,15 @@ section{
     color: crimson;
 }
 .app__timer{
+    min-height: 250px;
     font-size: 5rem;
-    line-height: .6rem;
-    padding: 20px;
-    margin: 10px;
+    line-height: 3.7rem;
+    padding-top: 20px;
 }
 .app__timer-p{
     font-size: 1.6rem;
     line-height: .1rem;
+    margin-inline: 10px;
 }
 .app__timer-btn{
     margin: 0 auto;

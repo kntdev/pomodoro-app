@@ -25,18 +25,19 @@
     <main>
         <section class="app">
             <div class="app__items">
-                <button>Pomodoro</button>
-                <button>Short Break</button>
-                <button>Long Break</button>
+                <button id="btn-pomodoro">Pomodoro</button>
+                <button id="btn-short">Short Break</button>
+                <button id="btn-long">Long Break</button>
             </div>
             <div class="app__timer-btn">
                 <div class="app__timer">
-                    <p id="timer1">Let's start?</p>
-                    <!-- <p id="timer2">5:00</p> -->
-                    <!-- <p id="timer3">15:00</p> -->
+                    <p id="timer">25mins</p>
+                    <!-- <p id="timer2">5mins</p> -->
+                    <!-- <p id="timer3">15mins</p> -->
                     
                     <!-- <p class="app__timer-p">mins</p> -->
                 </div>
+                <div id="sound" hidden></div>
                 <button id="btn-app" class="app__btn">START</button>
             </div>
             <h3 class="app__h3">Time to focus!</h3>
