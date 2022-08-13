@@ -6,27 +6,33 @@ const btnpomodoro = document.getElementById("btn-pomodoro");
 const btnshort = document.getElementById("btn-short");
 const btnlong = document.getElementById("btn-long");
 
-var valor = 25;
+function valor(a){
+  console.log(a)
+  return a
+}
 
-btnshort.addEventListener("click",(valor)=>{
-  valor = 5;
-  return  
+ const tPomodoro = valor(25);
+ const tLong = valor(15);
+ const tShort = valor(5);
+
+btnpomodoro.addEventListener("click",()=>{
+  startingMinutes = tPomodoro;
 });
-btnlong.addEventListener("click",(valor)=>{
-  valor = 15;
-  return  
+btnshort.addEventListener("click",()=>{
+  startingMinutes = tShort;
 });
-btnpomodoro.addEventListener("click",(valor)=>{
-  valor = 25;
-  return  
+btnlong.addEventListener("click",()=>{
+  startingMinutes = tLong;
 });
 
-startingMinutes = valor;
+startingMinutes = null;
+
+timer.innerHTML = startingMinutes;
 
 let time = startingMinutes * 60;
 
 function updateCountdown() {
-const minutes = Math.floor(time / 60);
+let minutes = Math.floor(time / 60);
 let seconds = time % 60;
 
 seconds = seconds < 10 ? '0' + seconds : seconds;
