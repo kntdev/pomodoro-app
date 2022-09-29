@@ -37,7 +37,7 @@ nav{
 }
 /* Main section*/
 section{
-    width: 60%;
+    width: 90%;
     min-width: 300px;
     max-width: 900px;
     margin: auto;
@@ -71,6 +71,8 @@ progress {
     padding: 20px;
     margin: 10px;
     border-radius: 15px;
+    max-width: 520px;
+    margin: auto;
   }
   
   .clock {
