@@ -10,36 +10,59 @@
     <link rel="stylesheet" href="./css/all.min.css">
 </head>
 <body>
+    <div class="progress-bar">
+        <progress id="js-progress" value="0"></progress>
+    </div>
+
     <header>
         <nav>
-            <div class="nav__logo">
+            <div class="nav__logo nav_itm">
                 <span>PomoTrick</span>
             </div>
-            <div class="nav__items">
+            <div class="nav__items nav_itm">
                 <a href="#">Settings</a>
                 <a href="#">About</a>
             </div>
+            <button class="btn-responsive"><i class="fa-solid fa-bars"></i></button>
         </nav>
     </header>
 
     <main>
         <section class="app">
-            <div class="app__items">
-                <button id="btn-pomodoro">Pomodoro</button>
-                <button id="btn-short">Short Break</button>
-                <button id="btn-long">Long Break</button>
-            </div>
-            <div class="app__timer-btn">
-                <div class="app__timer">
-                    <p id="timer"></p>
-                    <!-- <p id="timer2">5mins</p> -->
-                    <!-- <p id="timer3">15mins</p> -->
-                    
-                    <!-- <p class="app__timer-p">mins</p> -->
-                </div>
-                <div id="sound" hidden></div>
-                <button id="btn-app" class="app__btn">START</button>
-            </div>
+
+      <div class="timer">
+        <div class="button-group mode-buttons" id="js-mode-buttons">
+          <button
+            data-mode="pomodoro"
+            class="button active mode-button"
+            id="js-pomodoro"
+          >
+            Pomodoro
+          </button>
+          <button
+            data-mode="shortBreak"
+            class="button mode-button"
+            id="js-short-break"
+          >
+            Short break
+          </button>
+          <button
+            data-mode="longBreak"
+            class="button mode-button"
+            id="js-long-break"
+          >
+            Long break
+          </button>
+        </div>
+        <div class="clock" id="js-clock">
+          <span id="js-minutes">25</span>
+          <span class="separator">:</span>
+          <span id="js-seconds">00</span>
+        </div>
+        <button class="main-button" data-action="start" id="js-btn">
+          Start
+        </button>
+      </div>
             <h3 class="app__h3">Time to focus!</h3>
         </section>
         <section class="tasks">
@@ -54,6 +77,11 @@
             </div>
         </section>
     </main>
+    <div class="hidden">
+        <audio src="./assets/notification.mp3" data-sound="pomodoro"></audio>
+        <audio src="./assets/break.mp3" data-sound="shortBreak"></audio>
+        <audio src="./assets/break.mp3" data-sound="longBreak"></audio>
+      </div>
     <footer></footer>
     <script src="./javascript/app.js"></script>
 </body>

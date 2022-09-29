@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;500;700&display=swap');
 
+    :root {
+        --pomodoro: hsl(348, 83%, 47%);
+        --shortBreak: hsl(48, 23%, 40%);
+        --longBreak: hsl(105, 16%, 40%);
+    }
+
 body{
     font-family: 'Barlow', sans-serif;   
 }
@@ -7,11 +13,15 @@ body{
 /* Header Section */
 nav{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    min-width: 100%;
+    height: 80px;
     margin-bottom: 30px;
-    background-color: crimson;
+    background-color: var(--pomodoro);
+}
+.nav_itm{
+    padding-inline: 20px;
 }
 .nav__logo{
     font-size: 2.4rem;
@@ -21,73 +31,120 @@ nav{
     padding: 8px;
     margin-inline: 5px;
     background-color: #fff;
-    color: crimson;
+    color: var(--pomodoro);
     text-decoration: none;
     font-size: 1.2rem;
 }
 /* Main section*/
 section{
-    width: 90%;
-    min-width: 320px;
+    width: 60%;
+    min-width: 300px;
     max-width: 900px;
-    margin: 0 auto;
+    margin: auto;
+    /* padding: 20px; */
 }
 /* App Section*/
-.app{
+
+progress {
+    border-radius: 2px;
+    width: 100%;
+    height: 12px;
+    position: fixed;
+    top: 0;
+    margin-bottom: 10px;
+  }
+  
+  progress::-webkit-progress-bar {
+   background-color: rgba(0, 0, 0, 0.1);;
+  }
+  
+  progress::-webkit-progress-value {
+    background-color: #fff;
+  }
+  
+  .timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.149);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+  }
+  
+  .clock {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 10rem;
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mode-buttons{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .mode-button {
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: none;
+    font-weight: 500;
+    color: #fff;
+    border: 2px solid rgb(255, 167, 167);
+    border-radius: 4px;
+    padding: 6px 14px;
+    background: var(--pomodoro);
+  }
+  
+  .mode-button.active {
+    border-color: rgb(255, 52, 52);
+  }
+  
+  .main-button {
+    cursor: pointer;
+    box-shadow: rgb(255, 167, 167) 0px 6px 0px;
+    font-size: 22px;
+    height: 55px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    width: 200px;
+    background-color: var(--pomodoro);
+    border-width: initial;
+    border-style: none;
+    margin: 20px 0px 0px;
+    padding: 0px 12px;
+    border-radius: 4px;
+    transition: color 0.5s ease-in-out 0s;
+  }
+  
+  button:focus, button:active {
+    outline: none;
+  }
+  
+  .main-button.active {
+    transform: translateY(6px);
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .app__h3{
+    font-size: 4rem;
+    line-height: .8em;
+    margin-bottom: 30px;
+    color: var(--pomodoro);
     text-align: center;
 }
-.app__items{
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    background-color: crimson;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 8px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-}
-.app__items button{
-    margin-inline: 8px;
-    padding: 5px;
-    border: none;
-    background-color: crimson;
-    color: #fff;
-    cursor: pointer;
-}
-.app__btn{
-    border: none;
-    font-size: 1.5rem;
-    padding: 15px 35px;
-    color: #fff;
-    background-color: crimson;
-    cursor: pointer;
-}
-.app__h3{
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: crimson;
-}
-.app__timer{
-    min-height: 250px;
-    font-size: 5rem;
-    line-height: 3.7rem;
-    padding-top: 20px;
-}
-.app__timer-p{
-    font-size: 1.6rem;
-    line-height: .1rem;
-    margin-inline: 10px;
-}
-.app__timer-btn{
-    margin: 0 auto;
-    background-color: rgb(230, 230, 230);
-    max-width: 460px;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 20px;
-    border-radius: 10px;
-}
-/* Section tasks*/
+
+  /* Section tasks*/
 .tasks{
     display: flex;
     flex-direction: column;
@@ -101,23 +158,56 @@ section{
     align-items: center;
     justify-content: space-between;
     font-size: 1.5rem;
-    color: crimson;
+    color: var(--pomodoro);
 }
 .tasks__items-btn i{
     color: #fff;
-    background-color: crimson;
+    background-color: var(--pomodoro);
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
 }
 .tasks__app{
-    border: crimson 5px dotted;
+    border: var(--pomodoro) 5px dotted;
     border-radius: 15px;
-    width: 100%;
+    width: 80%;
     height: 100%;
     padding: 30px 10px;
     text-align: center;
-    color: crimson;
+    color: var(--pomodoro);
     font-size: 1.6rem;
     cursor: pointer;
 }
+
+
+                        /* Responsive Mode */
+
+.btn-responsive{
+    display: none;
+    margin-inline: 20px;
+    border-radius: 50%;
+    border: none;
+    padding: 10px 12px;
+    font-size: 20px;
+    color: var(--pomodoro);
+    background-color: #fff;
+}
+
+    @media screen and (max-width: 658px) {
+        .clock {
+            font-size: 7rem;
+    }
+        .btn-responsive{
+            display: inline-block;
+
+    }
+        .nav__items{
+            display: none;
+        }
+    }
+    @media screen and (max-width: 483px) {
+        .clock {
+          font-size: 6.3rem;
+        }
+    }
+  
